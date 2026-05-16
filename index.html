@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive 3D Drone Model</title>
 
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
 
   <style>
     html, body {
@@ -20,6 +22,15 @@
       width: 100vw;
       height: 100vh;
       background: #f5f5f5;
+
+      /* Hide the default loading progress bar */
+      --progress-bar-color: transparent;
+      --progress-mask: none;
+    }
+
+    /* Extra safeguard to hide any progress bar UI */
+    model-viewer::part(progress-bar) {
+      display: none;
     }
   </style>
 </head>
@@ -35,13 +46,16 @@
     exposure="1"
     environment-image="neutral"
 
-    camera-orbit="45deg 75deg 35%"
+    <!-- Zoomed out by ~25% from the previous 35% setting -->
+    camera-orbit="45deg 75deg 47%"
+
     field-of-view="25deg"
 
+    <!-- Prevent users from rotating underneath the model -->
     min-camera-orbit="auto 45deg 20%"
     max-camera-orbit="auto 90deg 200%"
 
-    interaction-prompt="auto">
+    interaction-prompt="none">
   </model-viewer>
 </body>
 </html>
