@@ -20,7 +20,6 @@
       width: 100vw;
       height: 100vh;
       background: #f5f5f5;
-      transform: translateY(-8%);
     }
   </style>
 </head>
@@ -29,20 +28,11 @@
   <model-viewer
     src="model.glb"
     alt="Interactive 3D drone photogrammetry model"
-
     camera-controls
     auto-rotate
     shadow-intensity="1"
     exposure="1"
-    environment-image="neutral"
-
-    camera-orbit="175deg 68deg 65%"
-    field-of-view="30deg"
-
-    min-camera-orbit="auto 45deg 25%"
-    max-camera-orbit="auto 90deg 250%"
-
-    interaction-prompt="auto">
+    environment-image="neutral">
   </model-viewer>
 </body>
 </html>
