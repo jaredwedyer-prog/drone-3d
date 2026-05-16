@@ -23,12 +23,12 @@
       height: 100vh;
       background: #f5f5f5;
 
-      /* Hide the default loading progress bar */
+      /* Hide the loading bar */
       --progress-bar-color: transparent;
       --progress-mask: none;
     }
 
-    /* Extra safeguard to hide any progress bar UI */
+    /* Completely hide the loading bar UI */
     model-viewer::part(progress-bar) {
       display: none;
     }
@@ -39,22 +39,15 @@
   <model-viewer
     src="model.glb"
     alt="Interactive 3D drone photogrammetry model"
-
     camera-controls
     auto-rotate
     shadow-intensity="1"
     exposure="1"
     environment-image="neutral"
-
-    <!-- Zoomed out by ~25% from the previous 35% setting -->
     camera-orbit="45deg 75deg 47%"
-
     field-of-view="25deg"
-
-    <!-- Prevent users from rotating underneath the model -->
     min-camera-orbit="auto 45deg 20%"
     max-camera-orbit="auto 90deg 200%"
-
     interaction-prompt="none">
   </model-viewer>
 </body>
